@@ -11,19 +11,53 @@
 <body class="bg-[#110B0B]">
     <!-- header -->
     <header>
-        <h1 class="text-[42px] text-white text-center md:hidden">Home</h1>
-            <div class="flex justify-between items-center px-5 h-[150px] relative bg-no-repeat bg-cover" style="background-image: url(Images/background-first.jpg);">
-                <img class="w-[100px]" src="Images/logo (1).png" alt="">
-                <ul class="flex text-[20px] text-white gap-5">
-                    <a class="hidden sm:hidden md:flex hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="#">Home</a>
-                    <a class="hidden sm:hidden md:flex hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="About.html">About</a>
-                    <a class="hidden sm:hidden md:flex hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="Services.html">Services</a>
-                    <a class="hidden sm:hidden md:flex hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="#footer">Contact Us</a>
-                    <a class="md:hidden hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="#">Back</a>
-                    <a class="md:hidden hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="About.html">Next</a>
-                </ul>
-                <a href="log_in.html" class="text-white bg-[#784022] px-[30px] py-[8px] md:px-[40px] rounded-full hover:bg-[#110B0B]">Log In</a>
+        <h1 class="text-[42px] text-[#784022] text-center md:hidden">HOME</h1>
+        <!-- Top Navigation -->
+         <div class="flex justify-between items-center px-5 h-[150px] bg-no-repeat bg-cover relative">
+        <!-- Logo -->
+            <img class="w-[110px] md:w-[160px]" src="Images/logo (1).png" alt="Logo">
+
+        <!-- Desktop Menu -->
+            <ul class="hidden md:flex text-[20px] text-[#784022] gap-5">
+                <a class="hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="#">Home</a>
+                <a class="hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="About.html">About</a>
+                <a class="hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="Services.html">Services</a>
+                <a class="hover:bg-[#784022] hover:rounded-[10px] hover:text-white hover:px-2" href="#footer">Contact Us</a>
+            </ul>
+
+        <!-- Login Button -->
+            <a href="log_in.html" class="hidden md:block text-white bg-[#784022] px-[30px] py-[8px] md:px-[40px] rounded-full hover:bg-[#110B0B]">Log In</a>
+
+        <!-- Hamburger for mobile -->
+            <button onclick="toggleMenu()" class="md:hidden text-3xl text-[#784022]">&#9776;</button>
+        </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobileMenu" class="hidden md:hidden bg-[#110B0B] text-white p-6 fixed top-0 left-0 w-full h-auto z-50">
+        <div class="flex justify-between items-center mb-4">
+            <div class="flex items-center gap-2">
+                <h1 class="text-xl font-bold">COFFEE SHOP</h1>
             </div>
+            <button onclick="toggleMenu()" class="text-white text-2xl font-bold">&times;</button>
+        </div>
+
+        <ul class="flex flex-col gap-3 mb-4 text-lg">
+            <li><a href="#" class="hover:underline">Home</a></li>
+            <li><a href="About.html" class="hover:underline">About</a></li>
+            <li><a href="Services.html" class="hover:underline">Services</a></li>
+            <li><a href="#footer" class="hover:underline">Contact Us</a></li>
+            <li><a href="log_in.html" class="hover:underline">Log In</a></li>
+        </ul>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMenu() {
+        const menu = document.getElementById('mobileMenu');
+        menu.classList.toggle('hidden');
+        }
+    </script>
+
     </header>
     <!-- End Of Header -->
 
